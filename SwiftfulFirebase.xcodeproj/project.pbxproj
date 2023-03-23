@@ -15,6 +15,11 @@
 		F1B7CE1429CC5D8C003B8D9F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1B7CE1329CC5D8C003B8D9F /* FirebaseAnalytics */; };
 		F1B7CE1629CC5D8C003B8D9F /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F1B7CE1529CC5D8C003B8D9F /* FirebaseAnalyticsSwift */; };
 		F1B7CE1929CC5F7D003B8D9F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1B7CE1829CC5F7D003B8D9F /* FirebaseAuth */; };
+		F1B7CE1C29CC6063003B8D9F /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7CE1B29CC6063003B8D9F /* AuthView.swift */; };
+		F1B7CE1E29CC6114003B8D9F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7CE1D29CC6114003B8D9F /* SignInView.swift */; };
+		F1B7CE2029CC647B003B8D9F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7CE1F29CC647B003B8D9F /* AuthManager.swift */; };
+		F1B7CE2229CC6764003B8D9F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7CE2129CC6764003B8D9F /* RootView.swift */; };
+		F1B7CE2429CC68E5003B8D9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B7CE2329CC68E5003B8D9F /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		F1B7CE0629CC5A01003B8D9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1B7CE0929CC5A01003B8D9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1B7CE1029CC5AF6003B8D9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1B7CE1B29CC6063003B8D9F /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		F1B7CE1D29CC6114003B8D9F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F1B7CE1F29CC647B003B8D9F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		F1B7CE2129CC6764003B8D9F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F1B7CE2329CC68E5003B8D9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 		F1B7CE0129CC59FE003B8D9F /* SwiftfulFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				F1B7CE1A29CC6055003B8D9F /* Auth */,
 				F1B7CE0229CC59FE003B8D9F /* SwiftfulFirebaseApp.swift */,
 				F1B7CE0429CC59FE003B8D9F /* ContentView.swift */,
 				F1B7CE1029CC5AF6003B8D9F /* GoogleService-Info.plist */,
@@ -82,6 +93,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1B7CE1A29CC6055003B8D9F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F1B7CE1B29CC6063003B8D9F /* AuthView.swift */,
+				F1B7CE1D29CC6114003B8D9F /* SignInView.swift */,
+				F1B7CE1F29CC647B003B8D9F /* AuthManager.swift */,
+				F1B7CE2129CC6764003B8D9F /* RootView.swift */,
+				F1B7CE2329CC68E5003B8D9F /* SettingsView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B7CE2429CC68E5003B8D9F /* SettingsView.swift in Sources */,
 				F1B7CE0529CC59FE003B8D9F /* ContentView.swift in Sources */,
 				F1B7CE0329CC59FE003B8D9F /* SwiftfulFirebaseApp.swift in Sources */,
+				F1B7CE2229CC6764003B8D9F /* RootView.swift in Sources */,
+				F1B7CE1E29CC6114003B8D9F /* SignInView.swift in Sources */,
+				F1B7CE1C29CC6063003B8D9F /* AuthView.swift in Sources */,
+				F1B7CE2029CC647B003B8D9F /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
