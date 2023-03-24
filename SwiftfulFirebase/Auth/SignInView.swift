@@ -12,23 +12,22 @@ final class SignInViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     
-    func signIn() {
+    func signUp() async throws {
         guard !email.isEmpty,
               !password.isEmpty else { return }
-        
-        Task {
-            do {
-                let userData = try await AuthManager.shared.createUser(withEmail: email, password: password)
-                print("User: \(userData)")
-            } catch {
-                print("Error: \(error)")
-            }
-        }
+        try await AuthManager.shared.createUser(withEmail: email, password: password)
+    }
+    
+    func signIn() async throws {
+        guard !email.isEmpty,
+              !password.isEmpty else { return }
+        try await AuthManager.shared.signIn(withEmail: email, password: password)
     }
 }
 
 struct SignInView: View {
     @StateObject private var vm = SignInViewModel()
+    @Binding var showSignInView: Bool
     
     var body: some View {
         VStack {
@@ -44,7 +43,23 @@ struct SignInView: View {
                 .cornerRadius(10)
             
             Button {
-                vm.signIn()
+                Task {
+                    do {
+                        try await vm.signUp()
+                        showSignInView = false
+                        return
+                    } catch {
+                        print("Error: \(error)")
+                    }
+                    
+                    do {
+                        try await vm.signIn()
+                        showSignInView = false
+                        return
+                    } catch {
+                        print("Error: \(error)")
+                    }
+                }
             } label: {
                 Text("Sign In")
                     .font(.headline)
@@ -65,8 +80,8 @@ struct SignInView: View {
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            SignInView()
+        NavigationView {
+            SignInView(showSignInView: .constant(true))
         }
     }
 }
